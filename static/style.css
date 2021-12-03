@@ -1,0 +1,77 @@
+body {
+    background-color: maroon;
+}
+
+h1 {
+    color: dodgerblue;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+input[type=text] {
+    border: 2px solid green;
+    border-radius: 4px;
+}
+
+.form-item {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 15px
+}
+
+.col1 {
+    margin: 15px;
+}
+.col2 {
+    margin: 15px;
+}
+.col3 {
+    margin: 15px;
+}
+.col4 {
+    margin: 15px;
+}
+.col5 {
+    margin: 15px;
+}
+.col6 {
+    margin: 15px;
+}
+
+.heading {
+    font-weight: bold;
+}
+
+#container {
+    background-color: rgb(216, 227, 241);
+    border-radius: 8px;
+    margin: 10px;
+}
+
+#form-container {
+    background-color: rgb(170, 228, 201);
+    border-radius: 8px;
+    margin: 10px
+}
+
+
+hr {
+ height: 10px;
+ width: 100%;
+ background-color: fuchsia;       
+}
+
+header {
+    background-color: rgb(168, 228, 168);
+    padding-top: 10px;
+}
