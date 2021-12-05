@@ -1,83 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
-    <title>Shopping List</title>
-</head>
-<body>
-    <header>
-        <h1>Shopping List</h1>
-        <hr>
-    </header>
-    <div id="form-container">
-        <div class="form_row">
-            <form class="add_item_form" action="/shopping-list" method="post">
-                <div class="form-item form-item1">
-                    <label for="item_name">Item:</label>
-                    <input type="text" name="item_name" id="item_name">
-                </div>
-                <div class="form-item form-item2">
-                    <label for="price">Price:</label>
-                    <input type="text" name="price" id="price">
-                </div>
-                <div class="form-item form-item3">
-                    <label for="quantity">Quantity:</label>
-                    <input type="text" name="quantity" id="quantity">
-                </div>
-                <div class="form-button">
-                    <input type="submit" value="Add item">
-                </div>
-            </form>
-        </div>
-    </div>
-    <div id="container">
-        <div class="row">
-            <div class="heading col1">{{headings[0]}}</div>
-            <div class="heading col2">{{headings[1]}}</div>
-            <div class="heading col3">{{headings[2]}}</div>
-            <div class="heading col3">{{headings[3]}}</div>
-        </div>
-        <div class="row">
-            {% for item in shopping_list %}
-            <div class="col col1">{{item.item_name}}</div>
-            <div class="col col2">{{"£%.2f"|format(item.price)}}</div>
-            <div class="col col3">{{item.quantity}}</div>
+{% extends "base.html" %}
 
-            {% if not item.bought %}
-            <form class="bought_button_form" action="/shopping-list/bought" method="post">
-                <div class="bought_button">
-                    <button type="submit" name="bought_button" value="{{item.item_name}}">check-off</button>
-                    <!-- <input name="{{item.name}}" type="submit" value="check-off"> -->
-                </div>  
-            </form>
-                  
-            {% elif item.bought %}
-            <form class="bought_button_form" action="/shopping-list/uncheck" method="post">
-                <div class="bought_button">
-                    <button type="submit" name="bought_button" value="{{item.item_name}}">bought</button>
-                    <!-- <input type="submit" value="Bought"> -->
-                </div>  
-            </form>
-            {% endif %}
-            <form class="delete_button_form" action="/shopping-list/delete" method="post">
-                <div class="delete_button">
-                    <button type="submit" name="delete_button" value="{{item.item_name}}">delete</button>
-                    <!-- <input type="submit" value="Bought"> -->
-                </div>  
-            </form>
-            {% endfor %}
-        </div>
-    </div>
-    <div id="container">
-        <div class="row">
-            <div class="col col1">Totals</div>
-            <div class="col col2">{{ "£%.2f"|format(grand_totals[0]) }}</div>
-            <div class="col col3">{{ grand_totals[1] }}</div>
-            <div class="col col3">{{ grand_totals[2] }}/{{ grand_totals[1] }}</div>
-        </div>
-    </div>
-</body>
-</html>
+{% block content %}
+
+    {% for item in shopping_list %}
+        <div class="col col1">{{item.item_name}}</div>
+        <div class="col col2">{{"£%.2f"|format(item.price)}}</div>
+        <div class="col col3">{{item.quantity}}</div>
+
+        {% if not item.bought %}
+        <form class="bought_button_form" action="/shopping-list/bought" method="post">
+            <div class="bought_button">
+                <button type="submit" name="bought_button" value="{{item.item_name}}">check-off</button>
+                <!-- <input name="{{item.name}}" type="submit" value="check-off"> -->
+            </div>  
+        </form>
+                
+        {% elif item.bought %}
+        <form class="bought_button_form" action="/shopping-list/uncheck" method="post">
+            <div class="bought_button">
+                <button type="submit" name="bought_button" value="{{item.item_name}}">bought</button>
+                <!-- <input type="submit" value="Bought"> -->
+            </div>  
+        </form>
+        {% endif %}
+        <form class="delete_button_form" action="/shopping-list/delete" method="post">
+            <div class="delete_button">
+                <button type="submit" name="delete_button" value="{{item.item_name}}">delete</button>
+                <!-- <input type="submit" value="Bought"> -->
+            </div>  
+        </form>
+    {% endfor %}
+
+{% endblock %}

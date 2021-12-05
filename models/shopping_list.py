@@ -18,6 +18,13 @@ def remove_item_by_name(name):
         if item.item_name == name:
             shopping_list.remove(item)
 
+def get_bought_list(bool):
+    if bool:
+        return [item for item in shopping_list if item.bought]
+    elif not bool:
+        return [item for item in shopping_list if not item.bought]
+
+
 def set_item_bought(name, status):
     for item in shopping_list:
         if item.item_name == name:

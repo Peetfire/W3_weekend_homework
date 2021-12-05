@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <title>Shopping List</title>
+</head>
+<body>
+    <header>
+        <h1>Shopping List</h1>
+        <hr>
+    </header>
+    <div id="form-container">
+        <div class="form_row">
+            <form class="add_item_form" action="/shopping-list" method="post">
+                <div class="form-item form-item1">
+                    <label for="item_name">Item:</label>
+                    <input type="text" name="item_name" id="item_name">
+                </div>
+                <div class="form-item form-item2">
+                    <label for="price">Price:</label>
+                    <input type="text" name="price" id="price">
+                </div>
+                <div class="form-item form-item3">
+                    <label for="quantity">Quantity:</label>
+                    <input type="text" name="quantity" id="quantity">
+                </div>
+                <div class="form-button">
+                    <input type="submit" value="Add item">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav class="filter-links">
+        <p>Filter by: </p>
+        <a href="../shopping-list">All</a>
+        <a href="../shopping-list/bought">Bought</a>
+        <a href="../shopping-list/to-buy">To Buy</a>
+    </nav>
+
+    <div id="container">
+        <div class="row">
+            <div class="heading col1">{{headings[0]}}</div>
+            <div class="heading col2">{{headings[1]}}</div>
+            <div class="heading col3">{{headings[2]}}</div>
+            <div class="heading col3">{{headings[3]}}</div>
+        </div>
+        <div class="row">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <div id="container">
+        <div class="row">
+            <div class="col col1">Totals</div>
+            <div class="col col2">{{ "£%.2f"|format(grand_totals[0]) }}</div>
+            <div class="col col3">{{ grand_totals[1] }}</div>
+            <div class="col col3">{{ grand_totals[2] }}/{{ grand_totals[1] }}</div>
+        </div>
+    </div>
+</body>
+</html>
