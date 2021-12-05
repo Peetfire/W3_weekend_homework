@@ -18,7 +18,7 @@ header > h1 {
     font-family: fantasy
 }
 
-form {
+.add_item_form {
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
@@ -60,6 +60,18 @@ form {
 .form-item3 > input{
     width: 50px;
     border-radius: 4px;
+}
+
+.bought_button_form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: fantasy 
+}
+
+.bought_button {
+    /* justify-content: center;
+    font-family: fantasy     */
 }
 
 .row {

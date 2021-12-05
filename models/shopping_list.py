@@ -13,23 +13,23 @@ headings = ["Item name", "Price", "Quantity", "Bought?"]
 def add_new_item(item):
     shopping_list.append(item)
 
-def set_item_bought(name):
+def set_item_bought(name, status):
     for item in shopping_list:
         if item.item_name == name:
-            item.bought = True
+            item.bought = status
 
-def get_total_price():
-    return sum([item.price * item.quantity for item in shopping_list])
+def get_total_price(item_list):
+    return sum([item.price * item.quantity for item in item_list])
 
-def get_total_items():
-    return sum([item.quantity for item in shopping_list])
+def get_total_items(item_list):
+    return sum([item.quantity for item in item_list])
 
-def get_total_bought():
-    return sum([item.quantity for item in shopping_list if item.bought])
+def get_total_bought(item_list):
+    return sum([item.quantity for item in item_list if item.bought])
 
-set_item_bought("Butter")
-total_price = get_total_price()
-total_items = get_total_items()
-total_bought = get_total_bought()
-totals = [total_price, total_items, total_bought]
+set_item_bought("Butter", True)
+total_price = get_total_price(shopping_list)
+total_items = get_total_items(shopping_list)
+total_bought = get_total_bought(shopping_list)
+grand_totals = [total_price, total_items, total_bought]
 

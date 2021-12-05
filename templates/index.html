@@ -14,7 +14,7 @@
     </header>
     <div id="form-container">
         <div class="form_row">
-            <form action="/shopping-list" method="post">
+            <form class="add_item_form" action="/shopping-list" method="post">
                 <div class="form-item form-item1">
                     <label for="item_name">Item:</label>
                     <input type="text" name="item_name" id="item_name">
@@ -47,13 +47,20 @@
             <div class="col col3">{{item.quantity}}</div>
 
             {% if not item.bought %}
-                <div class="col col4">
-                    <input type="checkbox" id="bought" name="bought">
-                </div>    
+            <form class="bought_button_form" action="/shopping-list/bought" method="post">
+                <div class="bought_button">
+                    <button type="submit" name="bought_button" value="{{item.item_name}}">check-off</button>
+                    <!-- <input name="{{item.name}}" type="submit" value="check-off"> -->
+                </div>  
+            </form>
+                  
             {% elif item.bought %}
-                <div class="col col4">
-                    <input type="checkbox" id="bought" name="bought" checked>
-                </div>
+            <form class="bought_button_form" action="/shopping-list/uncheck" method="post">
+                <div class="bought_button">
+                    <button type="submit" name="bought_button" value="{{item.item_name}}">bought</button>
+                    <!-- <input type="submit" value="Bought"> -->
+                </div>  
+            </form>
             {% endif %}
             
             {% endfor %}
@@ -62,9 +69,9 @@
     <div id="container">
         <div class="row">
             <div class="col col1">Totals</div>
-            <div class="col col2">{{ totals[0] }}</div>
-            <div class="col col3">{{ totals[1] }}</div>
-            <div class="col col3">{{ totals[2] }}/{{ totals[1] }}</div>
+            <div class="col col2">{{ grand_totals[0] }}</div>
+            <div class="col col3">{{ grand_totals[1] }}</div>
+            <div class="col col3">{{ grand_totals[2] }}/{{ grand_totals[1] }}</div>
         </div>
     </div>
 </body>
