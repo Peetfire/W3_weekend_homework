@@ -13,23 +13,25 @@
         <hr>
     </header>
     <div id="form-container">
-        <form action="/shopping-list" method="post">
-            <div class="form-item">
-                <label for="name_of_event">Name of Item:</label>
-                <input type="text" name="item_name" id="item_name">
-            </div>
-            <div class="form-item">
-                <label for="number_of_guests">Price:</label>
-                <input type="text" name="price" id="price">
-            </div>
-            <div class="form-item">
-                <label for="room_location">Quantity:</label>
-                <input type="text" name="quantity" id="quantity">
-            </div>
-            <div class="form-item">
-                <input type="submit" value="Add item">
-            </div>
-        </form>
+        <div class="form_row">
+            <form action="/shopping-list" method="post">
+                <div class="form-item form-item1">
+                    <label for="name_of_event">Item:</label>
+                    <input type="text" name="item_name" id="item_name">
+                </div>
+                <div class="form-item form-item2">
+                    <label for="number_of_guests">Price:</label>
+                    <input type="text" name="price" id="price">
+                </div>
+                <div class="form-item form-item3">
+                    <label for="room_location">Quantity:</label>
+                    <input type="text" name="quantity" id="quantity">
+                </div>
+                <div class="form-button">
+                    <input type="submit" value="Add item">
+                </div>
+            </form>
+        </div>
     </div>
     <div id="container">
         <div class="row">
@@ -40,10 +42,10 @@
         </div>
         <div class="row">
             {% for item in shopping_list %}
-            <div class="col1">{{item.item_name}}</div>
-            <div class="col2">{{item.price}}</div>
-            <div class="col3">{{item.quantity}}</div>
-            <div class="col4">{{item.bought}}</div>
+            <div class="col col1">{{item.item_name}}</div>
+            <div class="col col2">{{item.price}}</div>
+            <div class="col col3">{{item.quantity}}</div>
+            <div class="col col4">{{item.bought}}</div>
             {% endfor %}
         </div>
     </div>

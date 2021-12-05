@@ -1,77 +1,94 @@
-body {
-    background-color: maroon;
+header {
+    /* background-color: rgb(168, 228, 168); */
+    padding-top: 10px;
+}
+hr {
+    height: 2px;
+    width: 100%;
+    background-color: darkgreen;       
+   }
+
+header > h1 {
+    color: grey;
+    text-align: left;
+    margin-left: 15%;
 }
 
-h1 {
-    color: dodgerblue;
-    text-align: center;
-    margin-top: 15px;
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}  
+
+.form-button{
+    margin: 15px;
+    margin-right: 35px;
+    align-self:center;
+}
+
+.form-item > label{
+    margin: 2px;
+}
+
+.form-item1 {
+    display: flex;
+    margin: 15px
+}
+.form-item2 {
+    display: flex;
+    margin: 15px
+}
+.form-item3 {
+    display: flex;
+    margin: 15px
+}
+.form-item1 > input{
+    width: 200px;
+}
+.form-item2 > input{
+    width: 100px;
+}
+.form-item3 > input{
+    width: 50px;
 }
 
 .row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: 50px;
+    margin-right: 50px;
 }
-
-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+.col {
+    text-align: center;
+    margin: 7px;
 }
-
-input[type=text] {
-    border: 2px solid green;
-    border-radius: 4px;
-}
-
-.form-item {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    margin: 15px
-}
-
-.col1 {
-    margin: 15px;
-}
-.col2 {
-    margin: 15px;
-}
-.col3 {
-    margin: 15px;
-}
-.col4 {
-    margin: 15px;
-}
-.col5 {
-    margin: 15px;
-}
-.col6 {
-    margin: 15px;
-}
-
 .heading {
     font-weight: bold;
+    text-align: center;
+    margin: 7px;
+}
+.col1 {
+    text-align: left;
 }
 
 #container {
-    background-color: rgb(216, 227, 241);
+    background-color: rgb(162, 197, 191);
     border-radius: 8px;
-    margin: 10px;
+    margin: auto;
+    margin-top: 10px;
+    width: 70%;
 }
 
 #form-container {
     background-color: rgb(170, 228, 201);
     border-radius: 8px;
-    margin: 10px
+    margin: auto;
+    margin-top: 10px;
+    width: 70%;
 }
 
 
-hr {
- height: 10px;
- width: 100%;
- background-color: fuchsia;       
-}
 
-header {
-    background-color: rgb(168, 228, 168);
-    padding-top: 10px;
-}
+
+
+
