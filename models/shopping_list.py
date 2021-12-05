@@ -9,3 +9,6 @@ item6 = Item("Apples", 1.99, 2)
 
 shopping_list = [item1, item2, item3, item4, item5, item6]
 headings = ["Item name", "Price", "Quantity", "Bought?"]
+
+def add_new_item(item):
+    shopping_list.append(item)
