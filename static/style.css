@@ -1,3 +1,6 @@
+p {
+    font-family: fantasy  
+}
 header {
     /* background-color: rgb(168, 228, 168); */
     padding-top: 10px;
@@ -12,18 +15,22 @@ header > h1 {
     color: grey;
     text-align: left;
     margin-left: 15%;
+    font-family: fantasy
 }
 
 form {
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
+    font-family: fantasy    
+
 }  
 
 .form-button{
     margin: 15px;
     margin-right: 35px;
     align-self:center;
+    border-radius: 4px;
 }
 
 .form-item > label{
@@ -44,12 +51,15 @@ form {
 }
 .form-item1 > input{
     width: 200px;
+    border-radius: 4px;
 }
 .form-item2 > input{
     width: 100px;
+    border-radius: 4px;
 }
 .form-item3 > input{
     width: 50px;
+    border-radius: 4px;
 }
 
 .row {
@@ -61,11 +71,17 @@ form {
 .col {
     text-align: center;
     margin: 7px;
+    font-family: fantasy
+}
+.col > form {
+    align-content: center;
+    margin: 7px;
 }
 .heading {
     font-weight: bold;
     text-align: center;
     margin: 7px;
+    font-family: fantasy
 }
 .col1 {
     text-align: left;

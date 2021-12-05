@@ -18,4 +18,18 @@ def set_item_bought(name):
         if item.item_name == name:
             item.bought = True
 
+def get_total_price():
+    return sum([item.price * item.quantity for item in shopping_list])
+
+def get_total_items():
+    return sum([item.quantity for item in shopping_list])
+
+def get_total_bought():
+    return sum([item.quantity for item in shopping_list if item.bought])
+
 set_item_bought("Butter")
+total_price = get_total_price()
+total_items = get_total_items()
+total_bought = get_total_bought()
+totals = [total_price, total_items, total_bought]
+
