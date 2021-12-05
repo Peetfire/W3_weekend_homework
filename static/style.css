@@ -77,6 +77,8 @@ form {
     margin: auto;
     margin-top: 10px;
     width: 70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #form-container {

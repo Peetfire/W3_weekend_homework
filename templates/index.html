@@ -16,15 +16,15 @@
         <div class="form_row">
             <form action="/shopping-list" method="post">
                 <div class="form-item form-item1">
-                    <label for="item">Item:</label>
+                    <label for="item_name">Item:</label>
                     <input type="text" name="item_name" id="item_name">
                 </div>
                 <div class="form-item form-item2">
-                    <label for="number_of_guests">Price:</label>
+                    <label for="price">Price:</label>
                     <input type="text" name="price" id="price">
                 </div>
                 <div class="form-item form-item3">
-                    <label for="room_location">Quantity:</label>
+                    <label for="quantity">Quantity:</label>
                     <input type="text" name="quantity" id="quantity">
                 </div>
                 <div class="form-button">
@@ -45,7 +45,17 @@
             <div class="col col1">{{item.item_name}}</div>
             <div class="col col2">{{item.price}}</div>
             <div class="col col3">{{item.quantity}}</div>
-            <div class="col col4">{{item.bought}}</div>
+
+            {% if not item.bought %}
+                <div class="col col4">
+                    <input type="checkbox" id="bought" name="bought">
+                </div>    
+            {% elif item.bought %}
+                <div class="col col4">
+                    <input type="checkbox" id="bought" name="bought" checked>
+                </div>
+            {% endif %}
+            
             {% endfor %}
         </div>
     </div>

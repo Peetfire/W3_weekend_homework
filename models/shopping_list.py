@@ -12,3 +12,10 @@ headings = ["Item name", "Price", "Quantity", "Bought?"]
 
 def add_new_item(item):
     shopping_list.append(item)
+
+def set_item_bought(name):
+    for item in shopping_list:
+        if item.item_name == name:
+            item.bought = True
+
+set_item_bought("Butter")
