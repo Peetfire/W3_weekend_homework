@@ -43,7 +43,7 @@
         <div class="row">
             {% for item in shopping_list %}
             <div class="col col1">{{item.item_name}}</div>
-            <div class="col col2">{{item.price}}</div>
+            <div class="col col2">{{"£%.2f"|format(item.price)}}</div>
             <div class="col col3">{{item.quantity}}</div>
 
             {% if not item.bought %}
@@ -62,14 +62,19 @@
                 </div>  
             </form>
             {% endif %}
-            
+            <form class="delete_button_form" action="/shopping-list/delete" method="post">
+                <div class="delete_button">
+                    <button type="submit" name="delete_button" value="{{item.item_name}}">delete</button>
+                    <!-- <input type="submit" value="Bought"> -->
+                </div>  
+            </form>
             {% endfor %}
         </div>
     </div>
     <div id="container">
         <div class="row">
             <div class="col col1">Totals</div>
-            <div class="col col2">{{ grand_totals[0] }}</div>
+            <div class="col col2">{{ "£%.2f"|format(grand_totals[0]) }}</div>
             <div class="col col3">{{ grand_totals[1] }}</div>
             <div class="col col3">{{ grand_totals[2] }}/{{ grand_totals[1] }}</div>
         </div>
