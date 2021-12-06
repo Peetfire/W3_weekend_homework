@@ -113,7 +113,8 @@ hr {
 .col {
     text-align: center;
     margin: 7px;
-    font-family: fantasy
+    font-family: fantasy;
+    color: white;
 }
 .col > form {
     align-content: center;
@@ -123,10 +124,30 @@ hr {
     font-weight: bold;
     text-align: center;
     margin: 7px;
-    font-family: fantasy
+    font-family: fantasy;
+    color: black;
 }
+
+.totals {
+    font-weight: bolder;
+    text-align: center;
+    margin: 7px;
+    font-family: fantasy;
+    color: black;
+}
+
 .col1 {
     text-align: left;
+}
+
+#totals-container {
+    background-color: rgb(170, 228, 201);
+    border-radius: 8px;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #container {

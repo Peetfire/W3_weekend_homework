@@ -55,12 +55,12 @@
             {% block content %}{% endblock %}
         </div>
     </div>
-    <div id="container">
+    <div id="totals-container">
         <div class="row">
-            <div class="col col1">Totals</div>
-            <div class="col col2">{{ "£%.2f"|format(grand_totals[0]) }}</div>
-            <div class="col col3">{{ grand_totals[1] }}</div>
-            <div class="col col3">{{ grand_totals[2] }}/{{ grand_totals[1] }}</div>
+            <div class="totals col1">Totals</div>
+            <div class="totals col2">{{ "£%.2f"|format(grand_totals[0]) }}</div>
+            <div class="totals col3">{{ grand_totals[1] }}</div>
+            <div class="totals col3">{{ grand_totals[2] }}/{{ grand_totals[1] }}</div>
         </div>
     </div>
 </body>
